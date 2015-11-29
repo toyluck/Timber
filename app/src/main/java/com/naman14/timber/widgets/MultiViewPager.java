@@ -108,7 +108,9 @@ public class MultiViewPager extends ViewPager {
                 mNeedsMeasurePage = false;
                 int difference = pageWidth - childWidth;
                 setPageMargin(-difference);
+                //ceil：获取比该数大的最小的整数
                 int offscreen = (int) Math.ceil((float) pageWidth / (float) childWidth) + 1;
+                //设置屏幕 加载的页数
                 setOffscreenPageLimit(offscreen);
                 requestLayout();
             }

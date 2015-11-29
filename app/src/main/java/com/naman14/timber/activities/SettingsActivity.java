@@ -54,9 +54,11 @@ public class SettingsActivity extends AppCompatActivity {
             String what = getIntent().getExtras().getString(Constants.SETTINGS_STYLE_SELECTOR_WHAT);
             Fragment fragment = new StyleSelectorFragment().newInstance(what);
             FragmentManager fragmentManager = getSupportFragmentManager();
+            /*----------- 添加一个Fragment在该位置  ------------*/
             fragmentManager.beginTransaction()
                     .add(R.id.fragment_container, fragment).commit();
         } else {
+            /*----------- 注意: PreferenceFragment 是Fragment的子类  使用FragmentManger()进行控制  ------------*/
             getSupportActionBar().setTitle(R.string.settings);
             PreferenceFragment fragment = new SettingsFragment();
             android.app.FragmentManager fragmentManager = getFragmentManager();

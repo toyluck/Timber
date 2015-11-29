@@ -29,8 +29,10 @@ public class TimberApp extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+      //初始化 universi 图片加载框架
         ImageLoaderConfiguration localImageLoaderConfiguration = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(localImageLoaderConfiguration);
+      //安卓M 权限获取方法初始化
         Nammu.init(this);
 
     }

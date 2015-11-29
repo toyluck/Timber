@@ -117,6 +117,7 @@ public class MainFragment extends Fragment {
     public void onPause() {
         super.onPause();
         if (mPreferences.lastOpenedIsStartPagePreference()) {
+            //在SP中记录当前的pager
             mPreferences.setStartPageIndex(viewPager.getCurrentItem());
         }
     }

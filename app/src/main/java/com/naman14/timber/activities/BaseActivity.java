@@ -48,7 +48,7 @@ public class BaseActivity extends AppCompatActivity implements ServiceConnection
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        /*----------- 绑定MusicPlayer服务  ------------*/
         mToken = MusicPlayer.bindToService(this, this);
 
         mPlaybackStatus = new PlaybackStatus(this);
@@ -164,6 +164,9 @@ public class BaseActivity extends AppCompatActivity implements ServiceConnection
         }
     }
 
+    /**
+     * 广播接收,根据intent的action不同,执行不同的方法
+     */
     private final static class PlaybackStatus extends BroadcastReceiver {
 
         private final WeakReference<BaseActivity> mReference;
